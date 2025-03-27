@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📋 Table of Contents
 
-## Getting Started
+1. 🤖 [Introduction](#introduction)
+2. ⚙️ [Tech Stack](#tech-stack)
+3. 🔋 [Features](#features)
+4. 🚀 [Quick Start](#quick-start)
+5. 🛠️ [Setup & Configuration](#setup)
+6. 📜 [License](#license)
 
-First, run the development server:
+---
+
+## 🤖 Introduction
+
+A powerful **SaaS platform** designed to help users **manage expenses and budgets** efficiently. It features **AI-powered financial advice**, providing personalized recommendations based on income, expenses, and budgets. Built with **Next.js, Tailwind CSS, and Google Gemini AI**, it delivers an intuitive and responsive user experience.
+
+---
+
+## ⚙️ Tech Stack
+
+- **Next.js** – Framework for server-side rendering and API routes.
+- **TypeScript** – Strongly-typed JavaScript for better maintainability.
+- **Tailwind CSS** – Modern utility-first styling framework.
+- **Google Gemini AI** – AI-driven financial advice generation.
+- **Clerk** – Authentication & user management.
+- **Nodemailer** – For sending welcome emails.
+- **NeonDB** – PostgreSQL cloud database.
+- **Drizzle** – TypeScript ORM for database management.
+
+---
+
+## 🔋 Features
+
+✅ **Income & Expense Tracking** – Add, edit, and delete financial records.
+
+✅ **Budget Management** – Set budget limits and track overspending.
+
+✅ **AI-Powered Financial Advice** – Get personalized insights based on financial data using **Google Gemini AI**.
+
+✅ **User Authentication** – Secure sign-up/login with **Clerk**.
+
+✅ **Automated Welcome Emails** – New users receive welcome emails via **Nodemailer**.
+
+✅ **Responsive Design** – Optimized for desktop, tablet, and mobile.
+
+✅ **Cloud Database** – Uses **NeonDB** for scalable PostgreSQL storage.
+
+✅ **Efficient ORM** – **Drizzle** simplifies database interactions.
+
+---
+
+## 🚀 Quick Start
+
+### **1️⃣ Prerequisites**
+Ensure you have installed:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+
+### **2️⃣ Clone the Repository**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/yourusername/finansmart.git
+  cd finansmart
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **3️⃣ Install Dependencies**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+  npm install
+  # or
+  yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **4️⃣ Configure Environment Variables**
 
-## Learn More
+Create a **`.env.local`** file in the root directory and add:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NEXT_PUBLIC_GEMINI_API_KEY=
+NEXT_PUBLIC_DATABASE_URL=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+EMAIL_USER=
+EMAIL_PASS=
+```
+
+Replace placeholders with actual API keys and credentials.
+
+### **5️⃣ Run the Project**
+
+```bash
+  npm run dev
+  # or
+  yarn dev
+```
+
+Visit **[http://localhost:3000](http://localhost:3000)** to access the app.
 
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 📜 License
+
+This project is **open-source** and available under the [MIT License](LICENSE).
+
+---
