@@ -12,7 +12,7 @@
 .env.local
 drizzle/migrations
 /drizzle/
-
+/drizzle
 
 # testing
 /coverage
