@@ -60,8 +60,8 @@ Ensure you have installed:
 ### **2️⃣ Clone the Repository**
 
 ```bash
-  git clone https://github.com/yourusername/finansmart.git
-  cd finansmart
+  git clone https://github.com/yourusername/expense-tracker.git
+  cd expense-tracker
 ```
 
 ### **3️⃣ Install Dependencies**
