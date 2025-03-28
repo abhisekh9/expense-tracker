@@ -1,13 +1,13 @@
 import nodemailer from "nodemailer";
 import { getWelcomeEmail } from "./emailTemplate";
 
-export async function sendWelcomeEmail(userEmail, firstName) {
-  try {
+export function sendWelcomeEmail(userEmail, firstName) {
+  return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER,  
-        pass: process.env.EMAIL_PASS,  
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
@@ -21,11 +21,14 @@ export async function sendWelcomeEmail(userEmail, firstName) {
       html,
     };
 
-    await transporter.sendMail(mailOptions);
-    console.log(`✅ Email sent to ${userEmail}`);
-    return { success: true, message: "Email sent successfully" };
-  } catch (error) {
-    console.error("❌ Email sending failed:", error);
-    return { success: false, error: "Failed to send email" };
-  }
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error("❌ Email sending failed:", error);
+        reject({ success: false, error: "Failed to send email" });
+      } else {
+        console.log(`✅ Email sent to ${userEmail}`);
+        resolve({ success: true, message: "Email sent successfully", info });
+      }
+    });
+  });
 }
